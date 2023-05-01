@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/home.css">
-    <link rel="stylesheet" href="static\css\packages.css">
+    <link rel="stylesheet" href="../static/css/home.css?{% now "U" %} ">
+    <link rel="stylesheet" href="../static/css/Packages.css?{% now "U" %}">
     <title>Packages</title>
 </head>
 <body>
     {% include 'navbar.html' %}
 
     <div class="search">
-        <form action="" class="search-bar">
-            <input type="text" placeholder="From" name="q">
-            <input type="text" placeholder="To" name="p">        
-            <button>GO</button>
+        <form action="" method  = "post" class="search-bar">
+            <input type="text" placeholder="From" name="from" class="input">
+            <input type="text" placeholder="To" name="to" class="input">        
+            <input type= "submit" value="GO" class="button">
         </form>
     </div>    
+    <div class="searchresults">
+        {% include 'searchpackages.html' %}
+    </div>
 </body>
 </html>
